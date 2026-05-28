@@ -1,0 +1,45 @@
+﻿@model AccountsDto
+
+@{
+    ViewData["Title"] = "Create Account";
+}
+<form asp-action="AccountCreate">
+<h2 class="text-center">Create New Account</h2>
+
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <span asp-action="AccountCreate">
+            <div class="form-group mb-3">
+                <label asp-for="Number" class="form-label"></label>
+                <input asp-for="Number" class="form-control" />
+                <span asp-validation-for="Number" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Balance" class="form-label"></label>
+                <input asp-for="Balance" class="form-control" />
+                <span asp-validation-for="Balance" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="OwnerId" class="form-label"></label>
+                <input asp-for="OwnerId" class="form-control" />
+                <span asp-validation-for="OwnerId" class="text-danger"></span>
+            </div>
+            
+            </div>
+            <div class="form-group text-end">
+                <button type="submit" class="btn btn-success">Save</button>
+                <a asp-action="AccountIndex" class="btn btn-secondary">Back to List</a>
+               
+            </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

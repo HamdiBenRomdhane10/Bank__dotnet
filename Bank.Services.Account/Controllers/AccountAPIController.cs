@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Bank.Services.AccountAPI.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/account")]
     [ApiController]
     public class AccountAPIController : ControllerBase
     {
@@ -110,6 +110,7 @@ namespace Bank.Services.AccountAPI.Controllers
         }
 
         [HttpDelete]
+        [Route("{id:int}")]
         public ResponseDto Delete (int id)
         {
             try
